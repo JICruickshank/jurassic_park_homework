@@ -8,6 +8,7 @@ describe("Park", function() {
     dinosaur = new Dinosaur("Velociraptor", 3);
     dinosaur2 = new Dinosaur("T-Rex", 1);
     dinosaur3 = new Dinosaur("Triceratops", 2);
+    dinosaur4 = new Dinosaur("Velociraptor", 3);
   })
 
   it('park enclosure is empty', function() {
@@ -23,10 +24,12 @@ describe("Park", function() {
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
     assert.strictEqual(park.enclosure.includes(dinosaur2), true);
-    assert.strictEqual(park.enclosure.length, 3);
-    park.removeByType("T-Rex");
-    assert.strictEqual(park.enclosure.includes(dinosaur2), false);
+    assert.strictEqual(park.enclosure.length, 4);
+    park.removeByType("Velociraptor");
+    assert.strictEqual(park.enclosure.includes(dinosaur), false);
+    assert.strictEqual(park.enclosure.includes(dinosaur4), false);
     assert.strictEqual(park.enclosure.length, 2);
   })
 
@@ -35,5 +38,12 @@ describe("Park", function() {
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
     assert.strictEqual(park.twoPlusOffSpring(2).length, 1);
+  })
+
+  it('future dinosaurs', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    assert.strictEqual(park.futureDinosaurs(2), 15);
   })
 })
