@@ -8,7 +8,7 @@
     "mocha": "^5.0.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha specs"
   },
   "author": "",
   "license": "ISC"
