@@ -19,16 +19,16 @@ describe("Park", function() {
     assert.strictEqual(park.enclosure.length, 1);
   })
 
-  // it('remove dinosaurs by type', function() {
-  //   park.addDinosaur(dinosaur);
-  //   park.addDinosaur(dinosaur2);
-  //   park.addDinosaur(dinosaur3);
-  //   assert.strictEqual(park.enclosure.includes(dinosaur), true);
-  //   assert.strictEqual(park.enclosure.length, 3);
-  //   park.removeByType("Velociraptor");
-  //   assert.strictEqual(park.enclosure.includes(dinosaur), false);
-  //   assert.strictEqual(park.enclosure.length, 2);
-  // })
+  it('remove dinosaurs by type', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    assert.strictEqual(park.enclosure.includes(dinosaur2), true);
+    assert.strictEqual(park.enclosure.length, 3);
+    park.removeByType("T-Rex");
+    assert.strictEqual(park.enclosure.includes(dinosaur2), false);
+    assert.strictEqual(park.enclosure.length, 2);
+  })
 
   it('get all with offspring of more than 2', function() {
     park.addDinosaur(dinosaur);
