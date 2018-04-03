@@ -3,7 +3,7 @@ var Dinosaur = require("../dinosaur.js");
 
 describe("Dinosaur", function() {
   beforeEach(function() {
-    dinosaur = new Dinosaur();
+    dinosaur = new Dinosaur("T-Rex", 2);
   })
 
   it('dinosaur has a type', function() {
